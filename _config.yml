@@ -117,7 +117,7 @@ author:
       icon: "fas fa-fw fa-link"
       # url: "https://your-website.com"
     - label: "Wechat"
-      icon: "fab fa-fw fa-twitter-square"
+      icon: "fas fa-fw fa-link"
       url: "https://angknpng.github.io/imgs/Wechat.jpg"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
