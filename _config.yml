@@ -12,7 +12,7 @@
 
 # theme                  : "minimal-mistakes-jekyll"
 # remote_theme           : "mmistakes/minimal-mistakes"
-minimal_mistakes_skin    : "dark" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+minimal_mistakes_skin    : "air" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
 locale                   : "en-US"
@@ -118,7 +118,7 @@ author:
       # url: "https://your-website.com"
     - label: "Wechat"
       icon: "fab fa-fw fa-twitter-square"
-      url: "https://github.com/Angknpng/imgs/Wechat.jpg"
+      url: "https://angknpng.github.io/imgs/Wechat.jpg"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
       # url: "https://twitter.com/"
