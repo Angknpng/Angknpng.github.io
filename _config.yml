@@ -106,8 +106,8 @@ analytics:
 author:
   name             : "Kunpeng Wang"
   avatar           : "imgs/wkp.jpg"
-  bio              : "PhD graduate from Anhui University"
-  location         : "Changzhou, P.R.China"
+  bio              : "Ph.D. graduate from Anhui University"
+  location         : "P.R.China"
   email            : "kp.wang@foxmail.com"
   links:
     - label: "Email"
