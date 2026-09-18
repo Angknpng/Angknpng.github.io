@@ -326,159 +326,68 @@ In short, during my PhD studies, I have been the core contributor to several pro
 <!-- Visitor statistics -->
 <style>
   #visitor-stats {
-    box-sizing: border-box;
     clear: both;
-    width: 260px;
-    max-width: 100%;
-    margin: 36px 0 12px auto;
-    padding: 14px 16px;
-    border: 1px solid #e5e7eb;
-    border-radius: 6px;
-    background: #fff;
-    color: #64748b;
-    font-size: 12px;
-    line-height: 1.6;
-  }
-
-  #visitor-stats .visitor-heading {
-    margin-bottom: 10px;
-    color: #475569;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+    margin: 28px 0 12px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    line-height: 1;
   }
 
   #visitor-stats a {
-    color: #526b82;
+    display: inline-block;
+    border: none;
     text-decoration: none;
   }
 
-  #visitor-stats a:hover {
-    text-decoration: underline;
-  }
-
-  #visitor-stats .visitor-map {
-    display: flex;
-    min-height: 130px;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background: #f8fafc;
-    border-radius: 3px;
-    overflow: hidden;
-  }
-
-  #visitor-stats .visitor-map img {
+  #visitor-stats img {
     display: block;
-    width: 100%;
-    height: auto;
-    border: 0;
-  }
-
-  #visitor-stats .visitor-footer {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: 8px;
-    margin-top: 10px;
-  }
-
-  #visitor-stats .visitor-counter {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-  }
-
-  #visitor-stats .visitor-counter img {
     max-width: 100%;
     height: auto;
-    border: 0;
+    margin: 0;
+    border: none;
+    box-shadow: none;
   }
 
-  #visitor-stats [hidden] {
-    display: none !important;
+  #visitor-count {
+    flex: 0 0 auto;
   }
 
-  @media (max-width: 600px) {
-    #visitor-stats {
-      margin-right: auto;
-      margin-left: auto;
-    }
+  #visitor-map {
+    flex: 0 0 120px;
+    width: 120px;
+    max-width: 120px;
+  }
+
+  #visitor-map iframe,
+  #visitor-map canvas {
+    max-width: 100%;
   }
 </style>
 
-<aside id="visitor-stats" aria-label="Website visitor statistics">
-  <div class="visitor-heading">Visitor Locations</div>
-
-  <a class="visitor-map"
-     href="https://clustrmaps.com/site/1c3q5"
+<div id="visitor-stats">
+  <a id="visitor-count"
+     href="https://www.hitwebcounter.com"
      target="_blank"
      rel="noopener noreferrer"
-     aria-label="View visitor locations on ClustrMaps">
+     aria-label="Page views">
     <img
-      hidden
-      data-src="https://clustrmaps.com/map_v2.png?d=6PjBzcmZR6jo-TMzq6uaLo3gDJGKyfaw7BXGGveXpu4&amp;cl=ffffff"
-      data-unavailable="Map temporarily unavailable"
-      alt="Geographic distribution of website visitors">
-    <span>View visitor locations ↗</span>
+      src="https://hitwebcounter.com/counter/counter.php?page=18341650&amp;style=0006&amp;nbdigits=5&amp;type=page&amp;initCount=0"
+      alt=""
+      onerror="this.style.display='none'">
   </a>
 
-  <div class="visitor-footer">
-    <div class="visitor-counter">
-      <span>Page views</span>
-      <a href="https://www.hitwebcounter.com"
-         target="_blank"
-         rel="noopener noreferrer"
-         aria-label="Page view counter powered by HitWebCounter">
-        <img
-          hidden
-          data-src="https://hitwebcounter.com/counter/counter.php?page=18341650&amp;style=0006&amp;nbdigits=5&amp;type=page&amp;initCount=0"
-          data-unavailable="Unavailable"
-          alt="Cumulative page views">
-        <span>—</span>
-      </a>
-    </div>
-
-    <a href="https://clustrmaps.com/site/1c3q5"
-       target="_blank"
-       rel="noopener noreferrer">
-      ClustrMaps ↗
-    </a>
+  <div id="visitor-map" aria-label="Visitor locations">
+    <script
+      type="text/javascript"
+      id="clustrmaps"
+      src="https://clustrmaps.com/map_v2.js?d=6PjBzcmZR6jo-TMzq6uaLo3gDJGKyfaw7BXGGveXpu4&amp;cl=ffffff&amp;w=a">
+    </script>
   </div>
-</aside>
-
-<script>
-(function () {
-  var images = document.querySelectorAll(
-    "#visitor-stats img[data-src]"
-  );
-
-  images.forEach(function (img) {
-    var status = img.parentElement.querySelector("span");
-
-    function showUnavailable() {
-      status.textContent = img.dataset.unavailable;
-    }
-
-    var timeout = window.setTimeout(showUnavailable, 12000);
-
-    img.onload = function () {
-      window.clearTimeout(timeout);
-      img.hidden = false;
-      status.hidden = true;
-    };
-
-    img.onerror = function () {
-      window.clearTimeout(timeout);
-      img.hidden = true;
-      showUnavailable();
-    };
-
-    img.src = img.dataset.src;
-  });
-})();
-</script>
+</div>
 
 </body>
